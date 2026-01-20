@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>تحويل الأموال</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<div class="container">
+    <h2>تحويل الأموال بين الحسابات</h2>
+    <p style="text-align:center; color: #555;">رسوم التحويل: 500 ر.ي (حتى 100,000) أو 1000 ر.ي (أكثر من ذلك)</p>
+    <p style="color: #27a7ae; font-size: 14px;">
+        💡 الحسابات المتاحة:
+        (1 - 5)
+    </p>
+
+    <!-- عرض رصيد -->
+    <form action="transfer.php" method="GET">
+        <label for="check_balance">عرض رصيد الحساب</label>
+        <input type="number" id="check_balance" name="check_balance" placeholder="رقم الحساب">
+        <button type="submit" name="action" value="check_balance">عرض الرصيد</button>
+    </form>
+
+    
+
+    <!-- تحويل الأموال -->
+    <form action="transfer.php" method="POST">
+        <label for="from">من الحساب</label>
+        <input type="number" id="from" name="from" placeholder="رقم الحساب المرسل" required>
+
+        <label for="to">إلى الحساب</label>
+        <input type="number" id="to" name="to" placeholder="رقم الحساب المستلم" required>
+
+        <label for="amount">المبلغ (بالريال اليمني)</label>
+        <input type="number" step="1" min="1" max="50000000" id="amount" name="amount" placeholder="المبلغ المراد تحويله" required>
+
+            <button type="submit">تحويل الآن</button>
+    </form>
+</div>
+</body>
+</html>
